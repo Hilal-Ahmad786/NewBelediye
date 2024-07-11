@@ -11,13 +11,29 @@ async function sendEmail(req, res) {
       html: `<div>
         Name: ${req.body.name}
         <br />
+        Surname: ${req.body.surname}
+        <br />
         Email: ${req.body.email}
         <br />
         Contact: ${req.body.number}
         <br />
-        Company: ${req.body.company}
+        ID Number: ${req.body.idNumber}
+        <br />
+        Address: ${req.body.address}
+        <br />
+        Dropdown 1: ${req.body.dropdown1}
+        <br />
+        Dropdown 2: ${req.body.dropdown2}
+        <br />
+        Dropdown 3: ${req.body.dropdown3}
+        <br />
+        Dropdown 4: ${req.body.dropdown4}
         <br />
         Message: ${req.body.message}
+        <br />
+        Image: ${req.body.image ? req.body.image.name : 'No image uploaded'}
+        <br />
+        Video: ${req.body.video ? req.body.video.name : 'No video uploaded'}
       </div>`,
     })
   } catch (error) {

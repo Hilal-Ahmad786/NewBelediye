@@ -241,7 +241,7 @@ export const bannerCardData = {
 /*********          Contact Us Page Data            ************* */
 export const contactUs = {
   title: `${siteName} - Contact Us`,
-  heading: 'Contact Us & Start Build Amazing Products',
+  heading: 'Talep, Öneri ve Şikayet Formu',
 }
 
 /**********             Careers Page Data           ************* */
