@@ -12,26 +12,26 @@ import { contactForm } from '../../../data/data'
 
 // Define the type for the form state
 interface FormState {
-  name: string;
-  surname: string;
-  email: string;
-  number: string;
-  company: string;
-  idNumber: string;
-  address: string;
-  dropdown1: string;
-  dropdown2: string;
-  dropdown3: string;
-  dropdown4: string;
-  message: string;
-  image: File | null;
-  video: File | null;
+  name: string
+  surname: string
+  email: string
+  number: string
+  company: string
+  idNumber: string
+  address: string
+  dropdown1: string
+  dropdown2: string
+  dropdown3: string
+  dropdown4: string
+  message: string
+  image: File | null
+  video: File | null
 }
 
 // Define the type for dropdown options
 type DropdownOption = {
-  value: string;
-  label: string;
+  value: string
+  label: string
 }
 
 const ContactForm = () => {
@@ -53,7 +53,8 @@ const ContactForm = () => {
   })
 
   const [dropdown2Options, setDropdown2Options] = useState<DropdownOption[]>([])
-  const [dropdown2Placeholder, setDropdown2Placeholder] = useState('Select Option 2')
+  const [dropdown2Placeholder, setDropdown2Placeholder] =
+    useState('Select Option 2')
 
   const formSuccess = () => toast.success(contactForm.success)
   const formError = () => toast.error(contactForm.error)
@@ -150,7 +151,12 @@ const ContactForm = () => {
     <>
       <ToastContainer autoClose={5000} position="top-center" />
       <form className="contact-form" onSubmit={handleForm}>
-        <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }} direction={{ xs: 'column', md: 'row' }}>
+        <Grid
+          container
+          rowSpacing={3}
+          columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+          direction={{ xs: 'column', md: 'row' }}
+        >
           <Grid item xs={12} className="input-field-container">
             <select
               name="dropdown1"
@@ -158,7 +164,9 @@ const ContactForm = () => {
               value={form.dropdown1}
               onChange={handleDropdown1Change}
             >
-              <option value="" disabled>Başvuru Türünüzü seçiniz</option>
+              <option value="" disabled>
+                Başvuru Türünüzü seçiniz
+              </option>
               <option value="Talep">Talep</option>
               <option value="Şikayet">Şikayet</option>
               <option value="Öneri">Öneri</option>
@@ -171,9 +179,13 @@ const ContactForm = () => {
               value={form.dropdown2}
               onChange={(e) => setForm({ ...form, dropdown2: e.target.value })}
             >
-              <option value="" disabled>{dropdown2Placeholder}</option>
-              {dropdown2Options.map(option => (
-                <option key={option.value} value={option.value}>{option.label}</option>
+              <option value="" disabled>
+                {dropdown2Placeholder}
+              </option>
+              {dropdown2Options.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
               ))}
             </select>
           </Grid>
@@ -184,7 +196,9 @@ const ContactForm = () => {
               value={form.dropdown3}
               onChange={(e) => setForm({ ...form, dropdown3: e.target.value })}
             >
-              <option value="" disabled>Başvuru İçin İlgili Birimi Seçiniz</option>
+              <option value="" disabled>
+                Başvuru İçin İlgili Birimi Seçiniz
+              </option>
               <option value="Genel Sekreterlik">Genel Sekreterlik</option>
               <option value="Bilgi İşlem">Bilgi İşlem</option>
               <option value="İnsan Kaynakları">İnsan Kaynakları</option>
@@ -200,7 +214,9 @@ const ContactForm = () => {
               value={form.dropdown4}
               onChange={(e) => setForm({ ...form, dropdown4: e.target.value })}
             >
-              <option value="" disabled>Gender</option>
+              <option value="" disabled>
+                Gender
+              </option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               <option value="Other">Other</option>
